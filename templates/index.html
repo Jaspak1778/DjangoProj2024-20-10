@@ -4,9 +4,26 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-{% if user.is_authenticated %}
-<h5>Kirjautuneena: {{ user.username }} </h5>
-{% endif %}
-<h5>Koti Elefant</5>
-<a href="{% url 'signup' %}" >Tilit</a>
+<div class="grid-container">
+  <div class="item1">
+    <h2>Elefant</h2>
+    {% if user.is_authenticated %}
+      <p>Kirjautuneena: {{ user.username }}</p>
+    {% endif %}
+  </div>
+
+  <div class="item2">
+    {% if user.is_authenticated %}
+      <form action="{% url 'logout' %}" method="post" class="form-inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Kirjaudu ulos</button>
+      </form>
+    {% endif %}
+  </div>
+
+  <div class="item3">Main</div>  
+  <div class="item4">Right</div>
+  <div class="item5">Footer</div>
+</div>
+
 {% endblock %}
