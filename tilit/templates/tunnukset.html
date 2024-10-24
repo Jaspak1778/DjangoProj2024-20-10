@@ -1,0 +1,13 @@
+<!--Tunnusten luonti sivu-->
+
+<!DOCTYPE html>
+{% extends 'tilitbase.html' %}
+
+{% block content %}
+<h2>Luo tunnukset</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Sign Up</button>
+</form>
+{% endblock %}
