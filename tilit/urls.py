@@ -8,5 +8,5 @@ from .views import SignUpView, login, logout
 urlpatterns = [
     path('luotunnus/', SignUpView.as_view(), name="signup"),
     path('kirjaudu/', login.as_view(), name='kirjaudu'),
-    path('loggedout/', logout, name='logout'),  # Uloskirjautuminen
+    path('loggedout/', logout, name='loggedout'),  # Uloskirjautuminen
 ]
