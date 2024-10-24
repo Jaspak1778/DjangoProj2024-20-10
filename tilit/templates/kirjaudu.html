@@ -1,8 +1,21 @@
-<!--Kirjaudu sivu-->
+<!--Kirjaudu sivu
+E:\Koodi\DJANGO\drfsocialapp\main\tilit\templates\kirjaudu.html
+-->
 
-<!DOCTYPE html>
-{% extends 'layout.html' %}
+<!---Kirjautumis sivun base tai ns 'layout'-->
+{% extends 'tilitbase.html' %}
 
 {% block content %}
-<5>Kirjaudu</5>
+
+    <center>
+    <h2>Kirjaudu sisään</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <div class="buttongroup margins2">
+        <button class="btn btn-primary btn-sm mr1" type="submit">Kirjaudu</button>
+        </div>
+    </form>
+    </center>
+
 {% endblock %}

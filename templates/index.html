@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 {% extends 'layout.html' %}
 {% block content %}
+
+{% if user.is_authenticated %}
+<h5>Kirjautuneena: {{ user.username }} </h5>
+{% endif %}
 <h5>Koti Elefant</5>
 <a href="{% url 'signup' %}" >Tilit</a>
 {% endblock %}
